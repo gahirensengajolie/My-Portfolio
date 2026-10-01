@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap");
 
 /* ============================================================
    DESIGN TOKENS
@@ -1421,3 +1421,155 @@ img {
     font-size: 20px;
   }
 }
+
+/* ============================================================
+   REDESIGN LAYER — field green, marigold, signal blue on cool chalk.
+   Token names are kept so every existing component re-themes.
+   ============================================================ */
+:root {
+  --paper: #f2f4ee;
+  --paper-raised: #e8ede2;
+  --paper-deep: #dce4d2;
+  --ink: #163226;
+  --ink-soft: #425449;
+  --ink-faint: #5e6e65;
+  --line: #d3dcc9;
+  --line-strong: #b9c6ac;
+  --coral: #f2b01e;
+  --coral-dark: #0f6b45;
+  --coral-tint: #fbebc0;
+  --teal: #2f55d4;
+  --teal-tint: #dce4fb;
+  --gold: #b4541a;
+  --gold-tint: #f6dccb;
+  --ink-tint: #dce4d2;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "Bricolage Grotesque", system-ui, sans-serif;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 18px 40px -20px rgba(22, 50, 38, 0.4);
+}
+::selection { background: var(--coral); color: var(--ink); }
+.navbar { background: rgba(242, 244, 238, 0.9); }
+.logo-mark { background: var(--ink); color: var(--coral); border-radius: 8px; }
+.primary-button { background: var(--coral); color: var(--ink); box-shadow: none; }
+.primary-button:hover:not(:disabled) { background: #e09f0b; color: var(--ink); box-shadow: none; }
+.hero::before { display: none; }
+.skill-card, .project-card, .currently-card, .contact-box, .education-banner { border-radius: 8px; }
+.skill-card:hover, .project-card:hover, .expertise-card:hover { transform: none; box-shadow: none; }
+.section-name { text-transform: none; letter-spacing: 0; font-size: 14px; padding-left: 0; color: var(--coral-dark); font-weight: 600; }
+.section-name::before, .section-index { display: none; }
+.section h2, .hero-content h1 { font-weight: 700; letter-spacing: -0.03em; }
+.contact-label { text-transform: none; letter-spacing: 0; font-size: 12.5px; }
+.education-banner { background: var(--paper-raised); border-color: var(--line-strong); }
+
+.hero-role { font-style: normal; font-weight: 500; color: var(--coral-dark); font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; max-width: 520px; }
+.secondary-button { color: var(--ink); }
+
+
+.projects-grid { grid-template-columns: repeat(3, 1fr); }
+.project-card:first-child { grid-column: 1 / -1; border-color: var(--ink); border-width: 2px; }
+.project-card:first-child .project-content { max-width: 760px; }
+.project-card:first-child h3 { font-size: 32px; }
+.project-card:first-child .project-description { font-size: 16px; min-height: 0; }
+@media (max-width: 1000px) { .projects-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   HERO v2 — type dominates left, portrait anchors right.
+   Arch-shaped photo on an offset marigold arch.
+   ============================================================ */
+.hero-container { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+.hero-content h1 { font-size: clamp(52px, 7.4vw, 104px); line-height: 0.92; letter-spacing: -0.04em; }
+.hero-role { margin-top: 22px; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; color: var(--coral-dark); }
+.hero-description { max-width: 480px; margin-top: 20px; font-size: 17px; }
+.hero-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 44px; padding-top: 24px; border-top: 2px solid var(--ink); max-width: 480px; }
+.hero-stack li { font-size: 13px; font-weight: 600; padding: 5px 12px; border: 1.5px solid var(--ink); border-radius: 999px; }
+
+.hero-side { display: block; }
+.portrait { position: relative; max-width: 440px; margin-left: auto; }
+.portrait::before { content: ""; position: absolute; inset: 28px -28px -28px 28px; background: var(--coral); border-radius: 220px 220px 14px 14px; }
+.portrait-frame { position: relative; aspect-ratio: 4 / 5; border-radius: 220px 220px 14px 14px; overflow: hidden; background: var(--ink); border: 3px solid var(--ink); }
+.portrait-frame::after { content: "GJ"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 72px; font-weight: 700; color: var(--coral); }
+.portrait-frame img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.portrait-chip { position: absolute; z-index: 2; left: -24px; bottom: 44px; display: inline-flex; align-items: center; gap: 9px; margin: 0; padding: 10px 18px; background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; font-size: 14px; font-weight: 600; }
+
+@media (max-width: 1000px) {
+  .hero-side { order: -1; }
+  .portrait { max-width: 300px; margin: 0 auto 0 0; }
+  .portrait::before { inset: 18px -18px -18px 18px; }
+}
+@media (max-width: 420px) {
+  .portrait { max-width: 240px; }
+  .portrait-chip { left: -8px; font-size: 13px; }
+}
+
+/* Portrait polish: dot grid, calmer frame, circular status badge */
+.portrait::before { z-index: 0; }
+.portrait-frame { z-index: 1; border-width: 0; box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--ink); }
+.portrait-dots { position: absolute; z-index: 0; left: -44px; top: 60px; width: 120px; height: 150px;
+  background-image: radial-gradient(var(--ink) 1.6px, transparent 1.8px); background-size: 15px 15px; opacity: 0.55; }
+.portrait-badge { position: absolute; z-index: 2; left: -48px; bottom: 36px; width: 124px; height: 124px;
+  border-radius: 50%; background: var(--coral); border: 2px solid var(--ink); display: grid; place-items: center; }
+.portrait-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.portrait-badge text { font-size: 11.5px; font-weight: 700; fill: var(--ink); }
+.badge-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 5px var(--paper); }
+@media (max-width: 1000px) { .portrait-dots { left: -20px; } .portrait-badge { left: -20px; width: 100px; height: 100px; } .portrait-badge text { font-size: 9.5px; } }
+
+/* Portrait: no yellow block, dark-green badge, soft depth instead */
+.portrait::before { display: none; }
+.portrait-frame { box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--ink), 0 30px 50px -26px rgba(22, 50, 38, 0.55); }
+.portrait-badge { background: var(--ink); }
+.portrait-badge text { fill: var(--paper); }
+.badge-dot { background: var(--paper); box-shadow: 0 0 0 5px rgba(242, 244, 238, 0.25); }
+
+
+
+/* Name: looser tracking so letters no longer touch */
+.hero-content h1 { letter-spacing: -0.02em; font-weight: 700; }
+
+/* Navigation: darker, bolder, easier to see */
+.navbar { background: rgba(242, 244, 238, 0.97); border-bottom: 2px solid var(--ink); }
+.nav-links a { color: var(--ink); font-size: 15.5px; font-weight: 600; }
+.nav-links a::after { height: 3px; background: var(--coral); }
+.nav-github { color: var(--ink); font-size: 14px; font-weight: 600; }
+.nav-cta { background: var(--coral); border: 2px solid var(--ink); color: var(--ink); }
+.nav-cta:hover { background: var(--ink); color: var(--coral); }
+.nav-toggle { border: 2px solid var(--ink); }
+.mobile-menu a { font-size: 18px; font-weight: 600; }
+
+/* Portrait: calmer skin tone, less shine */
+.portrait-frame img { filter: saturate(0.86) contrast(0.94); }
+
+/* Navigation v2: solid dark bar, light text, always visible */
+.navbar { background: var(--ink); border-bottom: 3px solid var(--coral); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.logo-mark { background: var(--coral); color: var(--ink); }
+.nav-links a { color: #f2f4ee; font-size: 16px; font-weight: 600; }
+.nav-links a:hover { color: var(--coral); }
+.nav-links a::after { height: 3px; background: var(--coral); }
+.nav-github { color: #f2f4ee; font-weight: 600; }
+.nav-github:hover { color: var(--coral); }
+.nav-cta { background: var(--coral); color: var(--ink); border: 2px solid var(--coral); }
+.nav-cta:hover { background: #f2f4ee; color: var(--ink); border-color: #f2f4ee; }
+
+@media (max-width: 700px) {
+  .nav-links { display: flex; gap: 16px; }
+  .nav-links a { font-size: 14px; }
+  .nav-cta, .nav-toggle, .mobile-menu { display: none !important; }
+}
+
+/* Navigation v3: white bar, dark text, yellow button */
+:root { --nav-bg: #ffffff; }
+.navbar { background: var(--nav-bg); border-bottom: 3px solid var(--coral); box-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.35); }
+.logo-mark { background: var(--coral); color: #1a1a1a; }
+.nav-links a { color: #1a1a1a; font-size: 16px; font-weight: 600; }
+.nav-links a:hover { color: #b87f00; }
+.nav-github { color: #1a1a1a; font-weight: 600; }
+.nav-github:hover { color: #b87f00; }
+.nav-cta { background: var(--coral); color: #1a1a1a; border: 2px solid #1a1a1a; }
+.nav-cta:hover { background: #1a1a1a; color: var(--coral); border-color: #1a1a1a; }
+
+/* About: working philosophy */
+.motto { margin-top: 36px; padding: 6px 0 6px 24px; border-left: 5px solid var(--coral); max-width: 720px; }
+.motto p { font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); }
+.motto span { display: block; margin-top: 10px; font-size: 15.5px; line-height: 1.7; color: var(--ink-soft); }

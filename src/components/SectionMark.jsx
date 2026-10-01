@@ -1,9 +1,6 @@
-function SectionMark({ index, total, name }) {
+function SectionMark({ name }) {
   return (
     <div className="section-mark">
-      <span className="section-index">
-        {index}/{total}
-      </span>
       <span className="section-name">{name}</span>
     </div>
   );

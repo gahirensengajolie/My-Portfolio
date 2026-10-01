@@ -8,6 +8,10 @@ function About() {
 
         <h2>Curiosity first, code second.</h2>
 
+        <blockquote className="motto">
+          <p>Smart work, not hard work.</p>
+        </blockquote>
+
         <div className="about-grid">
           <div className="about-text">
             <p>
@@ -24,7 +28,7 @@ function About() {
 
             <p>
               Before I write code, I try to understand the problem behind the
-              product. Good software isn't just working technology — it's
+              product. Good software isn't just working technology  it's
               something that genuinely helps the person using it.
             </p>
           </div>

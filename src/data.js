@@ -1,3 +1,5 @@
+export const profile = { resumeUrl: "", linkedinUrl: "" };
+
 export const projects = [
   {
     title: "IVHUREDU",
