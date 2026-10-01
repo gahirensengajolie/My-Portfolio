@@ -15,8 +15,7 @@ function About() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              I'm a junior software developer with a background in Computer
-              Science and Software Development. I enjoy building digital
+              I'm a junior software developer with training through the AkiraChix program. I enjoy building digital
               products that are useful, accessible, and easy to understand.
             </p>
 

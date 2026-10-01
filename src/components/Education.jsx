@@ -8,13 +8,13 @@ function Education() {
 
         <div className="education-banner">
           <div>
-            <h2>Computer Science & Software Development</h2>
+            <h2>CODEHIVE program, AkiraChix</h2>
             <span className="education-note">
-              Foundation for my journey in software development
+              Certificate of Completion from AkiraChix in the CODEHIVE program, a one year intensive software development training for women in Africa.
             </span>
           </div>
 
-          <span className="education-tag">Bachelor's degree</span>
+          <span className="education-tag">Certificate</span>
         </div>
       </div>
     </section>
