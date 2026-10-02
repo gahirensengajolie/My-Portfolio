@@ -1,13 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap");
 
-/* ============================================================
-   DESIGN TOKENS
-   Warm ivory paper, deep espresso ink, terracotta accent.
-   Tints are layered for elevation; accents stay saturated
-   but softened so they never fight the photography.
-   ============================================================ */
 :root {
-  /* Surfaces */
+
   --paper: #faf7f2;
   --paper-raised: #f3eee7;
   --paper-deep: #e9e2d8;
@@ -17,7 +11,6 @@
   --line: #e2dbd0;
   --line-strong: #d3c9ba;
 
-  /* Accents */
   --coral: #e05a3a;
   --coral-dark: #c2452a;
   --coral-tint: #fbe3da;
@@ -27,12 +20,10 @@
   --gold-tint: #f6ecd2;
   --ink-tint: #e5dfd4;
 
-  /* Type */
   --font-display: "Fraunces", serif;
   --font-sans: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  /* Elevation */
   --shadow-sm: 0 1px 2px rgba(31, 26, 21, 0.05);
   --shadow-md: 0 2px 6px rgba(31, 26, 21, 0.06), 0 8px 24px rgba(31, 26, 21, 0.06);
   --shadow-lg: 0 4px 10px rgba(31, 26, 21, 0.07), 0 20px 48px rgba(31, 26, 21, 0.09);
@@ -91,11 +82,6 @@ img {
   overflow-x: hidden;
 }
 
-/* ============================================================
-   ACCESSIBILITY: SKIP LINK
-   Hidden until keyboard-focused, so keyboard/screen-reader users
-   can jump straight past the nav into the page content.
-   ============================================================ */
 .skip-link {
   position: absolute;
   top: -60px;
@@ -114,11 +100,6 @@ img {
   top: 16px;
 }
 
-/* ============================================================
-   HONEYPOT FIELD
-   Visually hidden from sighted users and skipped by screen
-   readers, but still present in the DOM/tab order-free for bots.
-   ============================================================ */
 .honeypot-field {
   position: absolute;
   left: -9999px;
@@ -128,9 +109,6 @@ img {
   pointer-events: none;
 }
 
-/* ============================================================
-   TOAST
-   ============================================================ */
 .toast {
   position: fixed;
   top: 24px;
@@ -178,9 +156,6 @@ img {
   }
 }
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
 .navbar {
   position: fixed;
   top: 0;
@@ -370,9 +345,6 @@ img {
   box-shadow: var(--shadow-md);
 }
 
-/* ============================================================
-   SECTION SHELL
-   ============================================================ */
 .section {
   padding: 120px 32px;
   scroll-margin-top: 74px;
@@ -435,9 +407,6 @@ img {
   line-height: 1.8;
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero {
   min-height: 100vh;
   padding-top: 150px;
@@ -574,9 +543,6 @@ img {
   box-shadow: var(--shadow-md);
 }
 
-/* ============================================================
-   HERO SIDE — PORTRAIT + SIGNATURE CARD
-   ============================================================ */
 .hero-side {
   display: flex;
   flex-direction: column;
@@ -602,8 +568,6 @@ img {
   pointer-events: none;
 }
 
-/* Cover the frame fully; anchor from the top so the face is
-   never cropped out, whatever the photo's native ratio is. */
 .portrait-image {
   position: absolute;
   inset: 0;
@@ -720,9 +684,6 @@ img {
   gap: 12px;
 }
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
 .about {
   background: var(--paper-raised);
   border-top: 1px solid var(--line);
@@ -783,9 +744,6 @@ img {
   box-shadow: 0 0 0 3px var(--coral-tint);
 }
 
-/* ============================================================
-   SKILLS
-   ============================================================ */
 .skills-grid {
   margin-top: 50px;
   display: grid;
@@ -846,9 +804,6 @@ img {
   color: var(--ink);
 }
 
-/* ============================================================
-   EXPERTISE
-   ============================================================ */
 .expertise {
   background: var(--paper);
 }
@@ -916,9 +871,6 @@ img {
   margin-top: 12px;
 }
 
-/* ============================================================
-   PROJECTS
-   ============================================================ */
 .projects {
   background: var(--paper-raised);
   border-top: 1px solid var(--line);
@@ -1065,9 +1017,6 @@ img {
   margin-top: 22px;
 }
 
-/* ============================================================
-   EDUCATION
-   ============================================================ */
 .education-banner {
   background: linear-gradient(135deg, var(--gold-tint) 0%, #fbf3dc 100%);
   border: 1px solid var(--gold);
@@ -1103,9 +1052,6 @@ img {
   white-space: nowrap;
 }
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
 .contact-box {
   background: var(--paper-raised);
   border: 1px solid var(--line);
@@ -1226,9 +1172,6 @@ img {
   color: var(--coral-dark);
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .footer {
   border-top: 1px solid var(--line);
   padding: 28px 32px;
@@ -1253,9 +1196,6 @@ img {
   color: var(--coral-dark);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width: 1000px) {
   .nav-links {
     gap: 18px;
@@ -1353,7 +1293,6 @@ img {
   }
 }
 
-/* Small phones (iPhone SE / older Android widths and below) */
 @media (max-width: 420px) {
   .nav-container {
     padding: 0 16px;
@@ -1410,7 +1349,7 @@ img {
 
   .form-field input,
   .form-field textarea {
-    font-size: 16px; /* prevents iOS Safari auto-zoom on focus */
+    font-size: 16px;
   }
 
   .education-banner {
@@ -1422,10 +1361,6 @@ img {
   }
 }
 
-/* ============================================================
-   REDESIGN LAYER — field green, marigold, signal blue on cool chalk.
-   Token names are kept so every existing component re-themes.
-   ============================================================ */
 :root {
   --paper: #f2f4ee;
   --paper-raised: #e8ede2;
@@ -1467,7 +1402,6 @@ img {
 .hero-role { font-style: normal; font-weight: 500; color: var(--coral-dark); font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; max-width: 520px; }
 .secondary-button { color: var(--ink); }
 
-
 .projects-grid { grid-template-columns: repeat(3, 1fr); }
 .project-card:first-child { grid-column: 1 / -1; border-color: var(--ink); border-width: 2px; }
 .project-card:first-child .project-content { max-width: 760px; }
@@ -1475,10 +1409,6 @@ img {
 .project-card:first-child .project-description { font-size: 16px; min-height: 0; }
 @media (max-width: 1000px) { .projects-grid { grid-template-columns: 1fr; } }
 
-/* ============================================================
-   HERO v2 — type dominates left, portrait anchors right.
-   Arch-shaped photo on an offset marigold arch.
-   ============================================================ */
 .hero-container { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
 .hero-content h1 { font-size: clamp(52px, 7.4vw, 104px); line-height: 0.92; letter-spacing: -0.04em; }
 .hero-role { margin-top: 22px; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; color: var(--coral-dark); }
@@ -1504,7 +1434,6 @@ img {
   .portrait-chip { left: -8px; font-size: 13px; }
 }
 
-/* Portrait polish: dot grid, calmer frame, circular status badge */
 .portrait::before { z-index: 0; }
 .portrait-frame { z-index: 1; border-width: 0; box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--ink); }
 .portrait-dots { position: absolute; z-index: 0; left: -44px; top: 60px; width: 120px; height: 150px;
@@ -1516,19 +1445,14 @@ img {
 .badge-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 5px var(--paper); }
 @media (max-width: 1000px) { .portrait-dots { left: -20px; } .portrait-badge { left: -20px; width: 100px; height: 100px; } .portrait-badge text { font-size: 9.5px; } }
 
-/* Portrait: no yellow block, dark-green badge, soft depth instead */
 .portrait::before { display: none; }
 .portrait-frame { box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--ink), 0 30px 50px -26px rgba(22, 50, 38, 0.55); }
 .portrait-badge { background: var(--ink); }
 .portrait-badge text { fill: var(--paper); }
 .badge-dot { background: var(--paper); box-shadow: 0 0 0 5px rgba(242, 244, 238, 0.25); }
 
-
-
-/* Name: looser tracking so letters no longer touch */
 .hero-content h1 { letter-spacing: -0.02em; font-weight: 700; }
 
-/* Navigation: darker, bolder, easier to see */
 .navbar { background: rgba(242, 244, 238, 0.97); border-bottom: 2px solid var(--ink); }
 .nav-links a { color: var(--ink); font-size: 15.5px; font-weight: 600; }
 .nav-links a::after { height: 3px; background: var(--coral); }
@@ -1538,10 +1462,8 @@ img {
 .nav-toggle { border: 2px solid var(--ink); }
 .mobile-menu a { font-size: 18px; font-weight: 600; }
 
-/* Portrait: calmer skin tone, less shine */
 .portrait-frame img { filter: saturate(0.86) contrast(0.94); }
 
-/* Navigation v2: solid dark bar, light text, always visible */
 .navbar { background: var(--ink); border-bottom: 3px solid var(--coral); backdrop-filter: none; -webkit-backdrop-filter: none; }
 .logo-mark { background: var(--coral); color: var(--ink); }
 .nav-links a { color: #f2f4ee; font-size: 16px; font-weight: 600; }
@@ -1558,7 +1480,6 @@ img {
   .nav-cta, .nav-toggle, .mobile-menu { display: none !important; }
 }
 
-/* Navigation v3: white bar, dark text, yellow button */
 :root { --nav-bg: #ffffff; }
 .navbar { background: var(--nav-bg); border-bottom: 3px solid var(--coral); box-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.35); }
 .logo-mark { background: var(--coral); color: #1a1a1a; }
@@ -1569,12 +1490,10 @@ img {
 .nav-cta { background: var(--coral); color: #1a1a1a; border: 2px solid #1a1a1a; }
 .nav-cta:hover { background: #1a1a1a; color: var(--coral); border-color: #1a1a1a; }
 
-/* About: working philosophy */
 .motto { margin-top: 36px; padding: 6px 0 6px 24px; border-left: 5px solid var(--coral); max-width: 720px; }
 .motto p { font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); }
 .motto span { display: block; margin-top: 10px; font-size: 15.5px; line-height: 1.7; color: var(--ink-soft); }
 
-/* Mobile fix: single column, photo on top, comfortable spacing */
 @media (max-width: 1000px) {
   .hero { min-height: auto; padding-top: 110px; padding-bottom: 64px; }
   .hero-container { grid-template-columns: 1fr; gap: 36px; }
@@ -1589,3 +1508,109 @@ img {
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .hero-buttons .primary-button, .hero-buttons .secondary-button { width: 100%; min-height: 48px; }
 }
+
+.portrait { max-width: 400px; }
+.portrait::before {
+  display: block;
+  z-index: 0;
+  inset: 22px -22px -22px 22px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.portrait-frame {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--paper-deep);
+  box-shadow: 0 0 0 6px var(--paper), 0 0 0 9px var(--ink);
+}
+.portrait-frame::after { color: var(--ink); }
+.portrait-frame img {
+  object-position: center 14%;
+  filter: saturate(0.82) contrast(0.96) hue-rotate(-6deg);
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  background: linear-gradient(160deg, rgba(15, 107, 69, 0.16), rgba(22, 50, 38, 0.22));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+@media (max-width: 1000px) {
+  .portrait::before { inset: 14px -14px -14px 14px; }
+}
+
+:root {
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 72px;
+}
+
+.hero { min-height: min(100vh, 860px); padding-top: 128px; padding-bottom: var(--s6); }
+.hero-container { grid-template-columns: 1.25fr 0.75fr; gap: var(--s6); align-items: center; }
+
+.hero-kicker { margin-bottom: var(--s3); }
+.hero-content h1 { font-size: clamp(44px, 7vw, 96px); line-height: 0.95; }
+.hero-role { margin-top: var(--s2); font-size: clamp(20px, 2.4vw, 28px); }
+.hero-description { margin-top: var(--s3); max-width: 46ch; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; color: var(--ink-soft); }
+.hero-buttons { margin-top: var(--s4); gap: var(--s2); }
+
+.hero-buttons .primary-button { min-height: 52px; padding-inline: var(--s4); font-size: 16px; font-weight: 700; box-shadow: 0 8px 0 -4px rgba(22, 50, 38, 0.18); }
+.hero-buttons .secondary-button { min-height: 52px; padding-inline: var(--s3); font-weight: 600; background: transparent; }
+
+.hero-stack { margin-top: var(--s5); padding-top: var(--s3); border-top-width: 1px; max-width: 46ch; }
+.hero-stack li { font-weight: 500; border-width: 1px; color: var(--ink-soft); }
+
+.portrait { max-width: 360px; margin-left: auto; margin-right: var(--s3); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero-content > *, .portrait { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-content > :nth-child(1) { animation-delay: 0.05s; }
+.hero-content > :nth-child(2) { animation-delay: 0.12s; }
+.hero-content > :nth-child(3) { animation-delay: 0.2s; }
+.hero-content > :nth-child(4) { animation-delay: 0.28s; }
+.hero-content > :nth-child(5) { animation-delay: 0.36s; }
+.hero-content > :nth-child(6) { animation-delay: 0.44s; }
+.portrait { animation-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > *, .portrait { animation: none; }
+}
+
+@media (max-width: 1000px) {
+  .hero { min-height: auto; padding-top: 96px; padding-bottom: var(--s5); }
+  .hero-container { grid-template-columns: 1fr; gap: var(--s3); }
+  .hero-side { order: -1; }
+  .portrait { width: clamp(112px, 30vw, 180px); max-width: none; margin: 0; }
+  .portrait-frame { box-shadow: 0 0 0 4px var(--paper), 0 0 0 6px var(--ink); }
+  .portrait::before { inset: 10px -10px -10px 10px; }
+  .hero-kicker { margin-bottom: var(--s2); }
+  .hero-content h1 { font-size: clamp(40px, 12vw, 72px); }
+  .hero-description { max-width: 52ch; }
+}
+@media (max-width: 700px) {
+  .hero { padding-top: 88px; }
+  .hero-buttons { margin-top: var(--s3); gap: var(--s1); }
+  .hero-buttons .primary-button, .hero-buttons .secondary-button { min-height: 48px; }
+  .hero-stack { margin-top: var(--s4); max-width: none; }
+}
+
+.hero-container, .section-container { max-width: 1116px; }
+@media (max-width: 1000px) {
+  .portrait { margin-left: 6px; }
+}
+.hero-buttons .primary-button { box-shadow: none; }
+
+.portrait::before { display: none; }
+
+@media (max-width: 1000px) {
+  .hero-side { display: flex; justify-content: center; }
+  .portrait { width: clamp(150px, 42vw, 220px); margin: 0 auto; }
+}
+
+.portrait-frame { box-shadow: 0 0 0 4px var(--ink); }
